@@ -143,7 +143,7 @@
                         .then(function(profile){
                             self.uid = profile.userId;
                             self.name = profile.displayName;
-                            axios.get('https://script.google.com/macros/s/AKfycbxDNO-fSUp1fiKXhY8DtLu48H4wj2fhhDvEJEacNRfj/dev?mode=memberList')
+                            axios.get('https://script.google.com/macros/s/AKfycbyBWLj5IaEbQBAvmcZXT-fLqbUijmrFoowxK463PCs7ECXOfuLG/exec?mode=memberList')
                             .then(response =>{
                                 self.memberList = response;
                             })
