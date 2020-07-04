@@ -27,8 +27,9 @@
                         </select>
                     </div>
                     <div class="form-group col-4">
-                        <input type="number" min="-200000" max="200000" step="100"　v-model.number="data.scores[0].score" class="form-control">
-                    </div>     
+                        <input type="number" v-model.number="data.scores[0].score" class="form-control">
+                    </div>
+                    <button type="button" class="btn btn-info" @click="changeSign(0)">±</button>    
                 </div>
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー２</label>
@@ -157,6 +158,9 @@
 
             },
             methods:{
+                changeSign:function(no){
+                    this.data.scores[no].score = this.data.scores[no].score * -1;
+                },
                 enter: function(){
                     this.isShow = false;
 
