@@ -145,7 +145,7 @@
                             self.name = profile.displayName;
                             axios.get('https://script.google.com/macros/s/AKfycbyBWLj5IaEbQBAvmcZXT-fLqbUijmrFoowxK463PCs7ECXOfuLG/exec?mode=memberList')
                             .then(response =>{
-                                self.memberList = response;
+                                self.memberList = response.memberList;
                             })
 
                         })
