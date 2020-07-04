@@ -89,7 +89,7 @@
 
 
         <div v-show='isShow'>
-            <button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom" v-if="totalScore ==100000" @click="enter">登録する</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom" v-if="checkData" @click="enter">登録する</button>
         </div>
 
         <div class="d-flex justify-content-center" v-if="!isShow && !isError">
@@ -115,10 +115,10 @@
                 data: {
                     liffMode: 'add-score',
                     scores:[
-                        {pl:{},score:0},
-                        {pl:{},score:0},
-                        {pl:{},score:0},
-                        {pl:{},score:0},
+                        {pl:{},score:''},
+                        {pl:{},score:''},
+                        {pl:{},score:''},
+                        {pl:{},score:''},
                     ]
 
                 },
@@ -164,7 +164,7 @@
                 changeSign:function(no){
                     this.data.scores[no].score = this.data.scores[no].score * -1;
                 },
-                enter: function(){
+                  enter: function(){
                     this.isShow = false;
 
                     //データをpost
@@ -190,6 +190,31 @@
             computed:{
                 totalScore:function(){
                     return (this.data.scores[0].score + this.data.scores[1].score + this.data.scores[2].score + this.data.scores[3].score);
+                },
+                checkData:function(){
+                    let res = true;
+                    
+                    if(this.totalScore != 100000){
+                        res = false;
+                    }else if(!Object.keys(this.data.scores[3].pl).length){
+                        res = false;
+                    }else if(!Object.keys(this.data.scores[2].pl).length){
+                        res = false;
+                    }else if(!Object.keys(this.data.scores[1].pl).length){
+                        res = false;
+                    }else if(!Object.keys(this.data.scores[0].pl).length){
+                        res = false;
+                    }else if( !(typeof this.data.scores[3].score === 'number') || !(isFinite(this.data.scores[3].score)) ){
+                        res = false;
+                    }else if( !(typeof this.data.scores[2].score === 'number') || !(isFinite(this.data.scores[2].score)) ){
+                        res = false;
+                    }else if( !(typeof this.data.scores[1].score === 'number') || !(isFinite(this.data.scores[1].score)) ){
+                        res = false;
+                    }else if( !(typeof this.data.scores[0].score === 'number') || !(isFinite(this.data.scores[0].score)) ){
+                        res = false;
+                    }
+
+                    return res;
                 }
             }
         })
