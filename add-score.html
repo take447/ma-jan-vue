@@ -29,7 +29,7 @@
                     <div class="form-group col-3">
                         <input type="number" v-model.number="data.scores[0].score" class="form-control">
                     </div>
-                    <button type="button" class="btn btn-info btn-sm" @click="changeSign(0)">±</button>    
+                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(0)">±</button>
                 </div>
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー２</label>
@@ -42,9 +42,10 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-4">
+                    <div class="form-group col-3">
                         <input type="number" v-model.number="data.scores[1].score" class="form-control">
-                    </div>     
+                    </div>
+                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(1)">±</button>
                 </div>
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー３</label>
@@ -57,9 +58,10 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-4">
+                    <div class="form-group col-3">
                         <input type="number" v-model.number="data.scores[2].score" class="form-control">
-                    </div>     
+                    </div>
+                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(2)">±</button>
                 </div>
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー４</label>
@@ -72,9 +74,10 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-4">
+                    <div class="form-group col-3">
                         <input type="number" v-model.number="data.scores[3].score" class="form-control">
-                    </div>     
+                    </div>
+                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(3)">±</button>
                 </div>
 
             </form>
