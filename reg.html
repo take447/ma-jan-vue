@@ -92,11 +92,8 @@
             methods:{
                 enter: function(){
                     this.isShow = false;
-                    if(this.type=='player'){
-                        this.code='';
-                    }
 
-                    //データをpostして
+                    //データをpost
                     axios.post('https://script.google.com/macros/s/AKfycbyBWLj5IaEbQBAvmcZXT-fLqbUijmrFoowxK463PCs7ECXOfuLG/exec',JSON.stringify(this.data))
                     .then(response => {
                         var mes = [{
