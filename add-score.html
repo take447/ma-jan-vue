@@ -170,11 +170,7 @@
                     //データをpost
                     axios.post('https://script.google.com/macros/s/AKfycbyBWLj5IaEbQBAvmcZXT-fLqbUijmrFoowxK463PCs7ECXOfuLG/exec',JSON.stringify(this.data))
                     .then(response => {
-                        var mes = [{
-                            type: 'text',
-                            text:'点数を登録しました'
-                        }];
-
+                        var mes = [response.data.mes];
                         liff.sendMessages(mes)
                             .then(() => {
                                 liff.closeWindow();
