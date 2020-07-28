@@ -14,7 +14,7 @@
     <div id="app">
         <div class="fixed-top h5 bg-info text-white mx-auto">{{name}} > メニュー > ランキング </div>
         <div class="container px-1" v-show="isShow">
-            <ul class="list-group">
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item p-0 pt-0　mb-3" v-for="pl in data.ranking">
                     <div class="list-group-item-heading alert alert-info row px-0 py-2 m-0">
                         <div class="col-2 h2 d-flex align-items-center justify-content-center">{{pl.rank}}</div>
