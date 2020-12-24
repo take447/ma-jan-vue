@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-with, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-type" content="text/html; charset = UTF-8">
+    <title>【麻雀BOT】ランキング</title>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+</head>
+
+<body class="my-5">
+    <div id="app">
+        <div class="fixed-top h5 bg-info text-white mx-auto">{{name}} > メニュー > ランキング </div>
+        <div class="container px-1" v-show="isShow">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item p-0 pt-0　mb-3" v-for="pl in data.ranking">
+                    <div class="list-group-item-heading alert alert-info row px-0 py-2 m-0">
+                        <div class="col-2 h2 d-flex align-items-center justify-content-center">{{pl.rank}}</div>
+                        <div class="col-2 px-1 d-flex align-items-center"><img class="img-fluid rounded-circle" :src="pl.icon"></div>
+                        <div class="col-5 pr-1 pl-0 d-flex align-items-center">{{pl.cn}}</div>
+                        <div class="col-3 pr-4 pl-0 d-inline-flex align-items-center justify-content-end h5"><strong>{{pl.score}}</strong></div>
+                    </div>
+
+                    <div class="list-group-item-text alert alert-light row p-0 mx-0 mt-0 mb-2">
+                        <div class="col-4 pr-4 pl-0 d-inline-flex align-items-center justify-content-end">半荘数：{{pl.count}}</div>
+                        <div class="col-2 pr-4 pl-0 d-inline-flex align-items-center justify-content-end"><small>1位 {{pl.rank1}}</small></div>
+                        <div class="col-2 pr-4 pl-0 d-inline-flex align-items-center justify-content-end"><small>2位 {{pl.rank2}}</small></div>
+                        <div class="col-2 pr-4 pl-0 d-inline-flex align-items-center justify-content-end"><small>3位 {{pl.rank3}}</small></div>
+                        <div class="col-2 pr-4 pl-0 d-inline-flex align-items-center justify-content-end"><small>4位 {{pl.rank4}}</small></div>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+            
+        <div>{{err}}</div>
+
+
+
+
+        <div class="d-flex justify-content-center" v-if="!isShow && !isError">
+            <div class="spinner-border " role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        
+    </div>
+        
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="./vconsole.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                data: {
+                    ranking:[]
+
+                },
+                uid:'',
+                name:'',
+                isShow: false,
+                isError:false,
+                err:''
+            },
+            mounted :function(){
+                var self = this;
+
+                
+                             axios.get('https://script.google.com/macros/s/AKfycbyBWLj5IaEbQBAvmcZXT-fLqbUijmrFoowxK463PCs7ECXOfuLG/exec?mode=ranking')
+                            .then(response =>{
+                                self.data.ranking = response.data.ranking;
+                                self.isShow = true;
+                            })
+
+ 
+
+
+            },
+
+        })
+    </script>
+
+<!--
+<script>
+window.onload = function(){
+    initVConsole();
+
+}
+// Initialize vConsole
+function initVConsole() {
+    window.vConsole = new window.VConsole({
+        defaultPlugins: ['system', 'network', 'element', 'storage'],
+        maxLogNumber: 1000,
+        onReady: function() {
+            console.log('vConsole is ready.');
+        },
+        onClearLog: function() {
+            console.log('on clearLog');
+        }
+    });
+}
+</script>
+-->
+
+
+</body>
+
+</html>
