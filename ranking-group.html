@@ -112,7 +112,7 @@
                             axios.get('https://script.google.com/macros/s/AKfycbzlbM_K-ZYL1SDCHbGvDUmIh_k7gLcm6c2IB3dtEyBLJGijlzLWJRt1rWFmZYpDCL8Sxg/exec?mode=ranking')
                             .then(response =>{
                                 self.data.ranking = response.data.ranking;
-                                self.data.ranking = response.data.groupRanking;
+                                self.data.groupRanking = response.data.groupRanking;
                                 self.isShow = true;
                             })
 
