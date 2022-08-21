@@ -17,7 +17,7 @@
 
             <div class="bg-info text-white mx-auto">個人ランキング</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item p-0 pt-0　mb-3" v-for="pl in data.ranking">
+                <li class="list-group-item p-0 pt-0 mb-3" v-for="pl in data.ranking">
                     <div class="list-group-item-heading alert alert-info row px-0 py-2 m-0">
                         <div class="col-2 h2 d-flex align-items-center justify-content-center">{{pl.rank}}</div>
                         <div class="col-2 px-1 d-flex align-items-center"><img class="img-fluid rounded-circle" :src="pl.icon"></div>
@@ -38,7 +38,7 @@
 
             <div class="bg-warning text-white mx-auto">グループランキング</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item p-0 pt-0　mb-3" v-for="pl in data.groupRanking">
+                <li class="list-group-item p-0 pt-0 mb-3" v-for="pl in data.groupRanking">
                     <div class="list-group-item-heading alert alert-warning row px-0 py-2 m-0">
                         <div class="col-2 h2 d-flex align-items-center justify-content-center">{{pl.rank}}</div>
                         <div class="col-2 px-1 d-flex align-items-center"><img class="img-fluid rounded-circle" :src="pl.icon"></div>
@@ -98,6 +98,11 @@
             },
             mounted :function(){
                 var self = this;
+
+                console.log(liff.isLoggedIn());
+                console.log(liff.isInClient());
+                console.log(liff.getOS());
+                console.log(liff.getVersion());
 
                 liff
                 .init({
