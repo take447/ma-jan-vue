@@ -18,7 +18,7 @@
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー１</label>
                 <div class="form-row">
-                    <div class="form-group col-6">
+                    <div class="form-group col-7 m-1 p-0">
                         <select id="pl1-cn"  v-model="data.scores[0].pl" class="form-control">
                             <option disabled value="">選択して下さい</option>
                             <option v-for="pl1 in memberList" :value="pl1" :key="pl1.uid">
@@ -26,15 +26,15 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-3">
+                    <div class="form-group col-3 m-1 p-0">
                         <input type="number" v-model.number="data.scores[0].score" class="form-control">
                     </div>
-                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(0)">±</button>
+                    <button type="button" class="btn btn-info col-1 my-1" @click="changeSign(0)">±</button>
                 </div>
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー２</label>
                 <div class="form-row">
-                    <div class="form-group col-7">
+                    <div class="form-group col-7 m-1 p-0">
                         <select id="pl2-cn"  v-model="data.scores[1].pl" class="form-control">
                             <option disabled value="">選択して下さい</option>
                             <option v-for="pl2 in memberList" :value="pl2" :key="pl2.uid">
@@ -42,15 +42,15 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-3">
+                    <div class="form-group col-3 m-1 p-0">
                         <input type="number" v-model.number="data.scores[1].score" class="form-control">
                     </div>
-                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(1)">±</button>
+                    <button type="button" class="btn btn-info col-1 my-1" @click="changeSign(1)">±</button>
                 </div>
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー３</label>
                 <div class="form-row">
-                    <div class="form-group col-7">
+                    <div class="form-group m-1 p-0">
                         <select id="pl3-cn"  v-model="data.scores[2].pl" class="form-control">
                             <option disabled value="">選択して下さい</option>
                             <option v-for="pl3 in memberList" :value="pl3" :key="pl3.uid">
@@ -58,15 +58,15 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-3">
+                    <div class="form-group col-3 m-1 p-0">
                         <input type="number" v-model.number="data.scores[2].score" class="form-control">
                     </div>
-                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(2)">±</button>
+                    <button type="button" class="btn btn-info col-1 my-1" @click="changeSign(2)">±</button>
                 </div>
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー４</label>
                 <div class="form-row">
-                    <div class="form-group col-7">
+                    <div class="form-group m-1 p-0">
                         <select id="pl4-cn"  v-model="data.scores[3].pl" class="form-control">
                             <option disabled value="">選択して下さい</option>
                             <option v-for="pl4 in memberList" :value="pl4" :key="pl4.uid">
@@ -74,10 +74,10 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-3">
+                    <div class="form-group col-3 m-1 p-0">
                         <input type="number" v-model.number="data.scores[3].score" class="form-control">
                     </div>
-                    <button type="button" class="btn btn-info btn-sm form-control col-1" @click="changeSign(3)">±</button>
+                    <button type="button" class="btn btn-info col-1 my-1" @click="changeSign(3)">±</button>
                 </div>
 
             </form>
