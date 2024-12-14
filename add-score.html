@@ -50,7 +50,7 @@
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー３</label>
                 <div class="form-row row">
-                    <div class="form-group m-1 p-0">
+                    <div class="form-group col-7 m-1 p-0">
                         <select id="pl3-cn"  v-model="data.scores[2].pl" class="form-control">
                             <option disabled value="">選択して下さい</option>
                             <option v-for="pl3 in memberList" :value="pl3" :key="pl3.uid">
@@ -66,7 +66,7 @@
 
                 <label for="pl1-cn" class="col-form-label">プレイヤー４</label>
                 <div class="form-row row">
-                    <div class="form-group m-1 p-0">
+                    <div class="form-group col-7 m-1 p-0">
                         <select id="pl4-cn"  v-model="data.scores[3].pl" class="form-control">
                             <option disabled value="">選択して下さい</option>
                             <option v-for="pl4 in memberList" :value="pl4" :key="pl4.uid">
