@@ -20,7 +20,7 @@
                 <li class="list-group-item p-0 pt-0 mb-3" v-for="pl in data.ranking">
                     <div class="list-group-item-heading alert alert-info row px-0 py-2 m-0">
                         <div class="col-2 h2 d-flex align-items-center justify-content-center">{{pl.rank}}</div>
-                        <div class="col-2 px-1 d-flex align-items-center"><img class="img-fluid rounded-circle" :src="pl.icon" onError="this.onerror=null;this.src='https://drive.google.com/uc?export=view&id=1R2VTkNWS2qqglgodpZdGdoW5Uu5dqVFL';"></div>
+                        <div class="col-2 px-1 d-flex align-items-center"><img class="img-fluid rounded-circle" :src="pl.icon" v-on:error="this.pl.icon='https://drive.google.com/uc?export=view&id=1R2VTkNWS2qqglgodpZdGdoW5Uu5dqVFL'"></div>
                         <div class="col-5 pr-1 pl-0 d-flex align-items-center">{{pl.cn}}</div>
                         <div class="col-3 pr-4 pl-0 d-inline-flex align-items-center justify-content-end h5"><strong>{{pl.score}}</strong></div>
                     </div>
